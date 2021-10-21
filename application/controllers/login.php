@@ -24,7 +24,7 @@
                 $this->session->set_userdata($sesdata);
                 if ($level == 'admin') {
                     $this->session->set_userdata('akses','admin');
-                    redirect('admin/overview');
+                    redirect('admin/overview_view');
                 }
                 elseif ($level == 'petugas') {
                     $this->session->set_userdata('akses','petugas');

@@ -15,9 +15,6 @@
     <title>SPP LOGIN</title>
   </head>
   <body>
-  
-
-  
   <div class="content">
     <div class="container">
       <div class="row">
