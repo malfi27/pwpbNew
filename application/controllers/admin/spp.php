@@ -16,7 +16,7 @@ class Spp extends CI_Controller
     {   
         if($this->session->userdata('akses')=='admin' || $this->session->userdata('akses')=='petugas'){
             $data["spp"] = $this->spp_model->getAll();
-            $this->load->view("admin/spp_view/list", $data);
+            $this->load->view("admin/spp/sppMenu_view", $data);
         }   
         else
         {
@@ -38,7 +38,7 @@ class Spp extends CI_Controller
                 $this->session->set_flashdata('success', 'Berhasil disimpan');
             }
 
-            $this->load->view("admin/spp_view/new_form");
+            $this->load->view("admin/spp/addData_view");
         }   
         else
         {

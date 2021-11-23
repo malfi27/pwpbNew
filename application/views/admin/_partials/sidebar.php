@@ -15,7 +15,7 @@
                 <li class="sidebar-title">Menu</li>
                 
                 <li
-                    class="sidebar-item active ">
+                    class="sidebar-item ">
                     <a href="<?php echo base_url('/index.php/admin');?>" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
@@ -24,7 +24,7 @@
                 
                 <li
                     class="sidebar-item ">
-                    <a href="#" class='sidebar-link'>
+                    <a href="<?php echo base_url('/index.php/admin/spp');?>" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Spp</span>
                     </a>

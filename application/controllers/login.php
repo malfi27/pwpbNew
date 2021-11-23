@@ -9,7 +9,7 @@
         }
         function auth() {
             $username = $this->input->post('username',TRUE);
-            $password = md5($this->input->post('password',TRUE));
+            $password = ($this->input->post('password',TRUE));
 
             $cek_user = $this->login_model->cek_user($username,$password);
             if ($cek_user->num_rows() > 0) {
@@ -24,7 +24,7 @@
                 $this->session->set_userdata($sesdata);
                 if ($level == 'admin') {
                     $this->session->set_userdata('akses','admin');
-                    redirect('admin/overview_view');
+                    redirect('admin');
                 }
                 elseif ($level == 'petugas') {
                     $this->session->set_userdata('akses','petugas');
