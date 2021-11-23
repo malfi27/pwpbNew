@@ -34,7 +34,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo site_url('admin/spp/') ?>">Spp</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
                     </ol>
                 </nav>
             </div>
@@ -51,29 +51,32 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 style="margin-bottom: -1rem;" class="card-title">Tambah Data</h4>
+                                <h4 style="margin-bottom: -1rem;" class="card-title">Edit Data</h4>
                             </div>
                             
                             <div class="card-content" style="padding:1.5rem;">
-                            <form action="<?php base_url('admin/spp/add') ?>" method="post" enctype="multipart/form-data" >
-                                    <div class="form-group">
-                                        <label for="tahun">Tahun Ajaran*</label>
-                                        <input class="form-control <?php echo form_error('tahun') ? 'is-invalid':'' ?>"
-                                            type="text" name="tahun" placeholder="Tahun" />
-                                        <div class="invalid-feedback">
-                                            <?php echo form_error('tahun') ?>
-                                        </div>
+                            <form action="<?php base_url("admin/spp/edit") ?>" method="post" enctype="multipart/form-data" >
+                                <input type="hidden" name="id" value="<?php echo $spp->id_spp?>" />
+
+                                <div class="form-group">
+                                    <label for="tahun">Tahun Ajaran*</label>
+                                    <input class="form-control <?php echo form_error('tahun') ? 'is-invalid':'' ?>"
+                                    type="text" name="tahun" placeholder="Tahun" value="<?php echo $spp->tahun ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('tahun') ?>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="nominal">Nominal*</label>
-                                        <input class="form-control <?php echo form_error('nominal') ? 'is-invalid':'' ?>"
-                                            type="number" name="nominal" min="0" placeholder="Nominal" />
-                                        <div class="invalid-feedback">
-                                            <?php echo form_error('nominal') ?>
-                                        </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nominal">Nominal*</label>
+                                    <input class="form-control <?php echo form_error('nominal') ? 'is-invalid':'' ?>"
+                                    type="number" name="nominal" min="0" placeholder="Nominal" value="<?php echo $spp->nominal ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nominal') ?>
                                     </div>
-                                    <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
-                                </form>
+                                </div>
+                                <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                            </form>
                             </div>
                         </div>
                     </div>

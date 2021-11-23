@@ -39,7 +39,7 @@
                                 <div class="card-header">
                                     <h4 class="card-title">SPP Table</h4>
                                 </div>
-                                <div class="card-content" style="padding: 0 1.5rem;">
+                                <div class="card-content" style="padding: 1rem 1.5rem;">
                                     <a href="<?php echo site_url('admin/spp/add') ?>" class="btn btn-primary mb-3">Tambah Data</a>
                                     <!-- table bordered -->
                                     <div class="table-responsive">

@@ -27,6 +27,7 @@ class Spp extends CI_Controller
 
     public function add()
     {   
+        $this->session->unset_userdata('success');
         if($this->session->userdata('akses')=='admin' || $this->session->userdata('akses')=='petugas'){
             
             $spp = $this->spp_model;
@@ -37,7 +38,7 @@ class Spp extends CI_Controller
                 $spp->save();
                 $this->session->set_flashdata('success', 'Berhasil disimpan');
             }
-
+            
             $this->load->view("admin/spp/addData_view");
         }   
         else
@@ -47,8 +48,8 @@ class Spp extends CI_Controller
     }
 
     public function edit($id = null)
-    {
-        if (!isset($id)) redirect('admin/spp');
+    {   
+        if (!isset($id)) redirect('admin/spp/');
        
         $spp = $this->spp_model;
         $validation = $this->form_validation;
@@ -57,13 +58,13 @@ class Spp extends CI_Controller
         if ($validation->run()) {
             $spp->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            redirect(site_url('admin/spp'));
+            redirect(site_url('admin/spp/'));
         }
 
         $data["spp"] = $spp->getById($id);
         if (!$data["spp"]) show_404();
         
-        $this->load->view("admin/spp_view/edit_form", $data);
+        $this->load->view("admin/spp/editData_view", $data);
     }
 
     
